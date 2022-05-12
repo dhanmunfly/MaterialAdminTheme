@@ -1,0 +1,26 @@
+<!-- Sidebar -->
+<div class="border-right" id="sidebar-wrapper" [ngClass]="isMenuExpanded ? 'hide' : 'show'">
+    <div class="list-group list-group-flush text-center">
+        <a routerLink="/home" routerLinkActive="activebutton"
+            class="list-group-item list-group-item-action bg-light sidebar-menu-link">
+            <span class="fa fa-home"></span> <br>
+            <span>Home</span>
+        </a>
+        <a routerLink="/dealer-finance" routerLinkActive="activebutton"
+            class="list-group-item list-group-item-action bg-light sidebar-menu-link">
+            <span class="fa fa-user"></span> <br>
+            <span>Dealer Finance</span>
+        </a>
+        <a routerLink="/vendor-finance" routerLinkActive="activebutton"
+            class="list-group-item list-group-item-action bg-light sidebar-menu-link">
+            <span class="fa fa-usd"></span> <br>
+            <span>Vendor Finance</span>
+        </a>
+        <a routerLink="/customer-support" routerLinkActive="activebutton"
+            class="list-group-item list-group-item-action bg-light sidebar-menu-link">
+            <span class="fa fa-ticket"></span> <br>
+            <span>Customer Support</span>
+        </a>
+    </div>
+</div>
+<!-- /#sidebar-wrapper -->
