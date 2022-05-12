@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { VendorFinanceComponent } from './vendor-finance/vendor-finance.component';
 import { ManageimComponent } from './vendor-finance/manageim/manageim.component';
+import { AddNewImComponent } from './vendor-finance/add-new-im/add-new-im.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'manage-im',
         component: ManageimComponent
+      },
+      {
+        path: 'add-new-im',
+        component: AddNewImComponent
       },
       { path: '**', redirectTo: 'manage-im' }
     ]
