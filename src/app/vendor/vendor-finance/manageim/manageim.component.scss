@@ -1,0 +1,71 @@
+$panelHeaderBgColor: #3f51b5;
+$panelHeaderTextColor: white;
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+.mat-header-cell,
+.mat-expansion-panel-header,
+.mat-expansion-panel-header:hover,
+.single-label-header,
+.menu-tab {
+    background: $panelHeaderBgColor  !important;
+    color: $panelHeaderTextColor  !important;
+}
+
+.mat-expansion-indicator::after,
+.mat-expansion-panel-header-title {
+    color: $panelHeaderTextColor  !important;
+}
+
+.mat-column-imname,
+.mat-column-nickname,
+.mat-column-city,
+.mat-column-phonenumber,
+.mat-column-businessgroup,
+.mat-column-debitaccnt,
+.mat-column-imlimit,
+.mat-column-limitexpiry,
+.mat-column-status {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 10% !important;
+    width: 10% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    word-break: break-word;
+
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.menu-container {
+    width: 80%;
+    margin: auto;
+}
+
+
+.mat-expansion-panel-header {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.add-icon-text {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: 500;
+}
