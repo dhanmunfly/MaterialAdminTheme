@@ -6,10 +6,25 @@ import { VendorFinanceComponent } from './vendor/vendor-finance/vendor-finance.c
 const routes: Routes = [
   {
     path: 'vendor-finance',
-    loadChildren: () => import('./vendor/vendor.module')  
+    loadChildren: () => import('./vendor/vendor.module')
         .then(m => m.VendorModule)
   },
-  { path: '**', redirectTo: 'vendor-finance' }
+  {
+    path: 'dealer-finance',
+    loadChildren: () => import('./vendor/vendor.module')
+        .then(m => m.VendorModule)
+  },
+  {
+    path: 'Home',
+    loadChildren: () => import('./home/home.module')
+        .then(m => m.HomeModule)
+  },
+  {
+    path: 'customer-support',
+    loadChildren: () => import('./home/home.module')
+        .then(m => m.HomeModule)
+  },
+  { path: '**', redirectTo: 'Home' }
 ];
 
 @NgModule({
