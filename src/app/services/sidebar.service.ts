@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SidebarService {
-  isMenuExpanded: boolean = true;
+  isMenuExpanded: boolean = false;
   private _menuExpand = new BehaviorSubject<boolean>(this.isMenuExpanded);
   public menuExpand$ = this._menuExpand.asObservable();
   

@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<div class="border-right" id="sidebar-wrapper" [ngClass]="isMenuExpanded ? 'hide' : 'show'">
+<div class="border-right" id="sidebar-wrapper" [ngClass]="!isMenuExpanded ? 'hide' : 'show'">
     <div class="list-group list-group-flush text-center">
         <a routerLink="/home" routerLinkActive="activebutton"
             class="list-group-item list-group-item-action bg-light sidebar-menu-link">

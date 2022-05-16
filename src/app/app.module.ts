@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { DefaultComponent } from './default/default.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { DefaultComponent } from './default/default.component';
     SidebarComponent,
     FooterComponent,
     LoginComponent,
-    DefaultComponent
+    DefaultComponent,
+    DialogBoxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

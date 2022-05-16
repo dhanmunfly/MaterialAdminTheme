@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '@services/sidebar.service';
 
 @Component({
   selector: 'app-default',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DefaultComponent implements OnInit {
 
-  constructor() { }
+  isMenuExpanded: boolean = true;
+
+  constructor(private sidebarService: SidebarService) { 
+    this.sidebarService.menuExpand$.subscribe(res => {
+      this.isMenuExpanded = res;
+    })
+  }
 
   ngOnInit(): void {
   }
