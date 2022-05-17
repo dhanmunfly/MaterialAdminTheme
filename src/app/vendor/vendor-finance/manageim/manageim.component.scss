@@ -69,3 +69,16 @@ th {
     margin-right: 5px;
     font-weight: 500;
 }
+
+.search-im-action {
+    display: inline-flex;
+    width: 100%;
+}
+
+.search-im-action .mat-button-base {
+    margin: 8px 8px 8px 0;
+}
+
+.search-im-action-header, .mat-header-cell {
+    text-align: center;
+}
