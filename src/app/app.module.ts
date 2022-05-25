@@ -7,10 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
-import { DefaultComponent } from './default/default.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,15 +15,11 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    LoginComponent,
-    DefaultComponent,
-    DialogBoxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

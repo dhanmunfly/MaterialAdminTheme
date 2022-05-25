@@ -7,27 +7,27 @@ import { ManageimComponent } from './vendor/vendor-finance/manageim/manageim.com
 import { VendorFinanceComponent } from './vendor/vendor-finance/vendor-finance.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: '',
-  //   pathMatch: 'full'
-  // },
   {
-    path: '',
-    component: DefaultComponent,
-    children: [
-      {
-        path: 'vendor-finance',
-        loadChildren: () => import('./vendor/vendor.module').then(m => m.VendorModule)
-      },
-      {
-        path: 'manage-roles',
-        loadChildren: () => import('./manage-roles/manage-roles.module').then(m => m.ManageRolesModule)
-      }
-    ]
+    path: 'vendor-finance',
+    loadChildren: () => import('./vendor/vendor.module')
+        .then(m => m.VendorModule)
   },
-  { path: 'login', component: LoginComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  {
+    path: 'dealer-finance',
+    loadChildren: () => import('./vendor/vendor.module')
+        .then(m => m.VendorModule)
+  },
+  {
+    path: 'Home',
+    loadChildren: () => import('./home/home.module')
+        .then(m => m.HomeModule)
+  },
+  {
+    path: 'customer-support',
+    loadChildren: () => import('./home/home.module')
+        .then(m => m.HomeModule)
+  },
+  { path: '**', redirectTo: 'Home' }
 ];
 
 @NgModule({
