@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { VendorFinanceComponent } from './vendor-finance/vendor-finance.component';
 import { ManageimComponent } from './vendor-finance/manageim/manageim.component';
 import { AddNewImComponent } from './vendor-finance/add-new-im/add-new-im.component';
+import { EditImComponent } from './vendor-finance/edit-im/edit-im.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'add-new-im',
         component: AddNewImComponent
+      },
+      {
+        path: 'edit-im/:id',
+        component: EditImComponent
       },
       { path: '**', redirectTo: 'manage-im' }
     ]

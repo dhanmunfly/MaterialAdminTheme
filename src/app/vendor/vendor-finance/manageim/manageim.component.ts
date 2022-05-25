@@ -3,7 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { DialogBoxComponent } from '@components/dialog-box/dialog-box.component';
+import { Router } from '@angular/router';
+import { ConfirmDialogModel, DialogBoxComponent } from '@components/dialog-box/dialog-box.component';
 
 export interface UserData {
   imname: string;
@@ -61,12 +62,15 @@ export class ManageimComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['imname', 'nickname', 'city', 'phonenumber', 'businessgroup'
   , 'debitaccnt', 'imlimit', 'limitexpiry', 'status', 'action'];
   dataSource: MatTableDataSource<UserData>;
-  
+  result: string = '';
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private dialog: MatDialog) {
+  constructor(
+    private dialog: MatDialog,
+    private router: Router
+    ) {
     // Create 100 users
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
@@ -93,21 +97,64 @@ export class ManageimComponent implements OnInit, AfterViewInit {
   }
 
   openDialog(action,obj) {
-    obj.action = action;
+    switch (action) {
+      case 'Update':
+        this.router.navigate(["/vendor-finance/edit-im", obj.imname]);
+        break;
+      case 'Delete':
+      case 'Deactivate':
+        this.confirmDialog(action, obj);
+        break;
+    
+      default:
+        break;
+    }
+  }
+
+  confirmDialog(action, obj): void {
+    let message = ``;
+    switch (action) {
+      case 'Delete':
+        message = `Are you sure you want to delete this?`;
+        break;
+      case 'Deactivate':
+        message = `Are you sure you want to deactivate this?`;
+        break;
+    
+      default:
+        message = `Are you sure you want to do this?`;
+        break;
+    }
+
+    const dialogData = new ConfirmDialogModel("Confirm Action", message);
+
     const dialogRef = this.dialog.open(DialogBoxComponent, {
-      width: '250px',
-      data:obj
+      maxWidth: "400px",
+      data: dialogData
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      // if(result.event == 'Add'){
-      //   this.addRowData(result.data);
-      // }else if(result.event == 'Update'){
-      //   this.updateRowData(result.data);
-      // }else if(result.event == 'Delete'){
-      //   this.deleteRowData(result.data);
-      // }
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      this.result = dialogResult;
+      switch (action) {
+        case 'Delete':
+          this.deleteIm();
+          break;
+        case 'Deactivate':
+          this.deactivateIm();
+          break;
+      
+        default:
+          break;
+      }
     });
+  }
+
+  deleteIm() {
+    alert("IM will be deleted")
+  }
+  
+  deactivateIm() {
+    alert("IM will be deactivated")
   }
 
 }
