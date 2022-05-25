@@ -13,41 +13,27 @@
                 <div class="col-md-2">
                     <img class="d-none d-md-flex" src="../../../assets/ybbi_corp.png" width="150">
                 </div>
-                <div class="col-md-4">
-                  <form class="navbar-form  form-search">
-                    <div class="input-append">
-
-                      <!-- <object data="../../../assets/home.svg" [ngClass]="{'selected-menu-icon': selectedMenuItem == 'home'}"> </object> -->
-                            <input data-provide="typeahead" data-items="4"  type="text"
-                               class="span2 search-query">
-                               <span class="fa fa-search search-icon"></span>
-                        </div>
-                      </form>
-                </div>
-
-                <div class="col-md-3 ">
-                    <div class="d-flex d-none d-md-flex flex-row align-items-center float-right ">
-                        <span class="user-text-color">Welcome Mr. Shiva Rao (Maker) <br>
-                            Last Login: 16/10/18, 10:00 AM</span>
+                <div class="col-md-5">
+                    <div class="d-flex form-inputs">
+                        <input class="form-control header-search-panel" type="text" placeholder="Search...">
+                        <span class="input-group-prepend">
+                            <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3"
+                                type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
                     </div>
                 </div>
-                <div class="col-md-2">
-                  <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link pl-5" href="#">
-                        <object data="../../../assets/contact.svg" class=" nav-icon-color"> </object>
-                        <!-- <i class="fa fa-globe nav-icon-color" aria-hidden="true"></i> -->
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="fa fa-bell nav-icon-color" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="fa fa-power-off nav-icon-color" aria-hidden="true"></i></a>
-                    </li>
-                  </ul>
-                </div>
 
+                <div class="col-md-4 pr-5">
+                    <div class="d-flex d-md-flex flex-row align-items-center float-right ">
+                        <span>Welcome Mr. Shiva Rao (Maker) <br>
+                            Last Login: 16/10/18, 10:00 AM</span>
+                        <!-- <mat-icon matBadge="10">notifications</mat-icon>
+                        <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon> -->
+                    </div>
+                    <a routerLink="/login">Logout</a>
+                </div>
             </div>
         </div>
     </section>
