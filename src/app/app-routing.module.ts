@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DefaultComponent } from './default/default.component';
+import { LoginComponent } from './login/login.component';
+import { ManageRoleComponent } from './manage-roles/manage-role/manage-role.component';
 import { ManageimComponent } from './vendor/vendor-finance/manageim/manageim.component';
 import { VendorFinanceComponent } from './vendor/vendor-finance/vendor-finance.component';
 

@@ -1,7 +1,9 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { DialogBoxComponent } from '@components/dialog-box/dialog-box.component';
 
 export interface UserData {
   imname: string;
@@ -57,14 +59,14 @@ const NAMES: string[] = [
 export class ManageimComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['imname', 'nickname', 'city', 'phonenumber', 'businessgroup'
-  , 'debitaccnt', 'imlimit', 'limitexpiry', 'status'];
+  , 'debitaccnt', 'imlimit', 'limitexpiry', 'status', 'action'];
   dataSource: MatTableDataSource<UserData>;
   
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     // Create 100 users
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
@@ -88,6 +90,24 @@ export class ManageimComponent implements OnInit, AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  openDialog(action,obj) {
+    obj.action = action;
+    const dialogRef = this.dialog.open(DialogBoxComponent, {
+      width: '250px',
+      data:obj
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // if(result.event == 'Add'){
+      //   this.addRowData(result.data);
+      // }else if(result.event == 'Update'){
+      //   this.updateRowData(result.data);
+      // }else if(result.event == 'Delete'){
+      //   this.deleteRowData(result.data);
+      // }
+    });
   }
 
 }

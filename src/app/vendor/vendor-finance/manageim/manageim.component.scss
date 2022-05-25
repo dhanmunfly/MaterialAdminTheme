@@ -1,34 +1,6 @@
 $panelHeaderBgColor: #3f51b5;
 $panelHeaderTextColor: white;
 
-table {
-    width: 100%;
-}
-
-.mat-form-field {
-    font-size: 14px;
-    width: 100%;
-}
-
-td,
-th {
-    width: 25%;
-}
-
-.mat-header-cell,
-.mat-expansion-panel-header,
-.mat-expansion-panel-header:hover,
-.single-label-header,
-.menu-tab {
-    background: $panelHeaderBgColor  !important;
-    color: $panelHeaderTextColor  !important;
-}
-
-.mat-expansion-indicator::after,
-.mat-expansion-panel-header-title {
-    color: $panelHeaderTextColor  !important;
-}
-
 .mat-column-imname,
 .mat-column-nickname,
 .mat-column-city,
@@ -51,6 +23,7 @@ th {
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+    text-align: center;
 }
 
 .menu-container {
@@ -64,8 +37,15 @@ th {
     border-bottom-right-radius: 0 !important;
 }
 
-.add-icon-text {
-    margin-left: 5px;
-    margin-right: 5px;
-    font-weight: 500;
+.search-im-action {
+    display: inline-flex;
+    width: 100%;
+}
+
+.search-im-action .mat-button-base {
+    margin: 8px 8px 8px 0;
+}
+
+.search-im-action-header, .mat-header-cell {
+    text-align: center;
 }

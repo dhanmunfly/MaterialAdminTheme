@@ -13,6 +13,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDialogModule} from '@angular/material/dialog';
 
 const VENDOR_MATERIAL = [
   MatFormFieldModule,
@@ -28,7 +31,10 @@ const VENDOR_MATERIAL = [
   MatSelectModule,
   MatToolbarModule,
   MatButtonToggleModule,
-  MatTabsModule
+  MatTabsModule,
+  MatBadgeModule,
+  MatRadioModule,
+  MatDialogModule
 ]
 
 @NgModule({

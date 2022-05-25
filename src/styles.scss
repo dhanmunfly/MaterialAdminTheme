@@ -1,6 +1,40 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-
+$panelHeaderBgColor: #3f51b5;
+$panelHeaderTextColor: white;
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+#page-content-wrapper {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+.mat-header-cell,
+.mat-expansion-panel-header,
+.mat-expansion-panel-header:hover,
+.single-label-header,
+.menu-tab {
+    background: $panelHeaderBgColor  !important;
+    color: $panelHeaderTextColor  !important;
+}
+
+.mat-expansion-indicator::after,
+.mat-expansion-panel-header-title {
+    color: $panelHeaderTextColor  !important;
+}

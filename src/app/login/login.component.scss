@@ -1,0 +1,40 @@
+.login-hightlight {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(to right, #9a175a, #280071);
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+}
+.login-hightlight h3 {
+    color: #fff;
+    margin: 0;
+}
+.login {
+    background: #cccccc42;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px;
+}
+.login h3 {
+    margin: 0;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.news-hightlight{
+    position: relative;
+    background: lightblue;
+    margin: 0;
+}
+
+// .news-hightlight h5 {
+
+// }
+
+
+.news-hightlight marquee {
+    width: 60%;
+    direction: left;
+    height: 100px;
+}

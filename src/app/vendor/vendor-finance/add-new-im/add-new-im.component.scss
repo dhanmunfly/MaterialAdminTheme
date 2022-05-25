@@ -11,7 +11,8 @@ $panelHeaderTextColor: white;
 }
 
 .mat-expansion-indicator::after,
-.mat-expansion-panel-header-title {
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
     color: $panelHeaderTextColor  !important;
 }
 
@@ -23,4 +24,23 @@ $panelHeaderTextColor: white;
 .mat-form-field {
     font-size: 14px;
     width: 100%;
+}
+
+.add-im-radio-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.add-im-radio-button {
+    margin: 5px;
+}
+
+.add-im-submit-row {
+    display: table-cell;
+    width: 100%;
+}
+
+.add-im-submit-row .mat-button-base {
+    margin: 8px 8px 8px 0;
 }
