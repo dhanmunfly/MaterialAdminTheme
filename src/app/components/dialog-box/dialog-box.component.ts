@@ -13,27 +13,33 @@ export interface UsersData {
 })
 export class DialogBoxComponent implements OnInit {
 
-  action:string;
-  local_data:any;
+  title: string;
+  message: string;
 
-  constructor(
-    public dialogRef: MatDialogRef<DialogBoxComponent>,
-    //@Optional() is used to prevent error if no data is passed
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: UsersData) {
-    console.log(data);
-    this.local_data = {...data};
-    this.action = this.local_data.action;
+  constructor(public dialogRef: MatDialogRef<DialogBoxComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: ConfirmDialogModel) {
+    // Update view with given values
+    this.title = data.title;
+    this.message = data.message;
   }
 
-  doAction(){
-    this.dialogRef.close({event:this.action,data:this.local_data});
+  ngOnInit() {
   }
 
-  closeDialog(){
-    this.dialogRef.close({event:'Cancel'});
+  onConfirm(): void {
+    // Close the dialog, return true
+    this.dialogRef.close(true);
   }
 
-  ngOnInit(): void {
+  onDismiss(): void {
+    // Close the dialog, return false
+    this.dialogRef.close(false);
   }
 
+}
+
+export class ConfirmDialogModel {
+
+  constructor(public title: string, public message: string) {
+  }
 }

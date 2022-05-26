@@ -87,5 +87,12 @@
 
     <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
 </div>
+
+<div>
+  <b>
+    {{booksList |json }}
+  </b>
+  <b *ngIf="booksList.length == 0"> No Data Found</b>
+</div>
 <!-- <br><br><br><br>
 <mat-divider></mat-divider> -->

@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { DefaultComponent } from './default/default.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
