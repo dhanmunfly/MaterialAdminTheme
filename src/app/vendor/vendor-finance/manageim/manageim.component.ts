@@ -5,6 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ConfirmDialogModel, DialogBoxComponent } from '@components/dialog-box/dialog-box.component';
+import { ImService } from 'app/vendor/services/im.service';
 
 export interface UserData {
   imname: string;
@@ -66,20 +67,31 @@ export class ManageimComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  booksList: any;
 
   constructor(
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private _imService: ImService
     ) {
     // Create 100 users
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
-    
+
   }
 
   ngOnInit(): void {
+    this.getApiData();
+  }
+
+  getApiData(){
+    this.booksList = this._imService.getUsers().subscribe((data) => {
+      console.log(data);
+      this.booksList = data;
+      console.log(this.booksList)
+    });;
   }
 
   ngAfterViewInit() {
@@ -105,7 +117,7 @@ export class ManageimComponent implements OnInit, AfterViewInit {
       case 'Deactivate':
         this.confirmDialog(action, obj);
         break;
-    
+
       default:
         break;
     }
@@ -120,7 +132,7 @@ export class ManageimComponent implements OnInit, AfterViewInit {
       case 'Deactivate':
         message = `Are you sure you want to deactivate this?`;
         break;
-    
+
       default:
         message = `Are you sure you want to do this?`;
         break;
@@ -142,7 +154,7 @@ export class ManageimComponent implements OnInit, AfterViewInit {
         case 'Deactivate':
           this.deactivateIm();
           break;
-      
+
         default:
           break;
       }
@@ -152,7 +164,7 @@ export class ManageimComponent implements OnInit, AfterViewInit {
   deleteIm() {
     alert("IM will be deleted")
   }
-  
+
   deactivateIm() {
     alert("IM will be deactivated")
   }
