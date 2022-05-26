@@ -7,7 +7,7 @@ import { IndustryMajor } from '../vendor-finance/models/industry-major';
   providedIn: 'root'
 })
 export class ImService {
-  private baseUrl = "https://gorest.co.in/public/v2/users";
+  private baseUrl = "http://localhost:8081/book/500";
 
   constructor(private http: HttpClient) { }
 

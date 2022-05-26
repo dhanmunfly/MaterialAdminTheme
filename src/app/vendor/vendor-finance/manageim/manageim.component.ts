@@ -67,7 +67,7 @@ export class ManageimComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  booksList: any = [];
+  booksList = [];
 
   constructor(
     private dialog: MatDialog,
@@ -87,11 +87,11 @@ export class ManageimComponent implements OnInit, AfterViewInit {
   }
 
   getApiData(){
-    this.booksList = this._imService.getUsers().subscribe((data) => {
+     this._imService.getUsers().subscribe((data) => {
       console.log(data);
-      this.booksList = data;
+      this.booksList.push(data);
       console.log(this.booksList)
-    });;
+    });
   }
 
   ngAfterViewInit() {
