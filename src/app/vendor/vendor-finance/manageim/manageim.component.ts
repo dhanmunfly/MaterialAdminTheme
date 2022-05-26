@@ -67,7 +67,7 @@ export class ManageimComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  booksList: any;
+  booksList: any = [];
 
   constructor(
     private dialog: MatDialog,
