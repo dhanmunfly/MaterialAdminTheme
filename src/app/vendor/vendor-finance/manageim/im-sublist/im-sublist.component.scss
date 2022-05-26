@@ -1,0 +1,32 @@
+.subheader {
+    /* background: transparent linear-gradient(269deg, #280071 0%, #791162 73%, #C72153 100%) 0% 0% no-repeat padding-box; */
+    opacity: 1;
+}
+
+.im-header {
+    top: 97px;
+    left: 85px;
+    width: 150px;
+    height: 30px;
+    opacity: 1;
+    padding: 3px 0px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 12px;
+}
+
+.im-header a {
+    text-decoration: none;
+}
+
+.im-header:hover, .im-header:active{
+   background-color: #13a4e9;
+   color: #fff;
+}
+
+.field-success {
+    background-color: #13a4e9;
+   color: #fff;
+}

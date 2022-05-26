@@ -1,0 +1,34 @@
+/*Gloabal CSS Start*/
+body {
+    overflow-x: hidden;
+}
+/*Gloabal CSS End*/
+
+/*Common CSS Start*/
+#wrapper {
+    font-family: cursive;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#page-content-wrapper nav {
+    background-color: #004eff;
+    background-image: linear-gradient(to right, #5803ff, #ff00a5, #77758f);
+}
+
+@media (min-width: 768px) {
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+    .show
+    {
+      margin-left: 0!important;
+    }
+    .hide
+    {
+      margin-left: -15rem!important;
+    }
+}

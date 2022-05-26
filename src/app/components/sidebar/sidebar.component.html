@@ -1,0 +1,30 @@
+<!-- Sidebar -->
+<div class="border-right" id="sidebar-wrapper" [ngClass]="isMenuExpanded ? 'show' : 'hide'">
+    <div class="list-group list-group-flush text-center">
+        <a routerLink="/Home" routerLinkActive="activebutton "
+            class="list-group-item list-group-item-action bg-light sidebar-menu-link" (click)="onSelectMenuItem('home')">
+            <!-- <span class="sidebar-heading" class="fa fa-home"></span> -->
+            <object data="../../../assets/home.svg" [ngClass]="{'selected-menu-icon': selectedMenuItem == 'home'}"> </object>
+             <br>
+            <span class="sidebar-heading">Home</span>
+        </a>
+        <a routerLink="/dealer-finance" routerLinkActive="activebutton "
+            class="list-group-item list-group-item-action bg-light sidebar-menu-link" (click)="onSelectMenuItem('dealer')">
+            <!-- <span class="sidebar-heading" class="fa fa-user"></span> -->
+            <object data="../../../assets/dealer.svg" [ngClass]="{'selected-menu-icon': selectedMenuItem == 'dealer'}"> </object> <br>
+            <span class="sidebar-heading">Dealer Finance</span>
+        </a>
+        <a routerLink="/vendor-finance/manageIm" routerLinkActive="activebutton"
+            class="list-group-item list-group-item-action bg-light sidebar-menu-link" (click)="onSelectMenuItem('vendor')">
+            <!-- <span class="sidebar-heading" class="fa fa-usd"></span>  -->
+            <object data="../../../assets/vendor.svg" [ngClass]="{'selected-menu-icon': selectedMenuItem == 'vendor'}"> </object> <br>
+            <span class="sidebar-heading">Vendor Finance</span>
+        </a>
+        <a routerLink="/customer-support" routerLinkActive="activebutton"
+            class="list-group-item list-group-item-action bg-light sidebar-menu-link" (click)="onSelectMenuItem('customer_support')">
+            <object data="../../../assets/customer_service.svg" [ngClass]="{'selected-menu-icon': selectedMenuItem == 'customer_support'}"> </object> <br>
+            <span class="sidebar-heading">Customer Support</span>
+        </a>
+    </div>
+</div>
+<!-- /#sidebar-wrapper -->
