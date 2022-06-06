@@ -7,7 +7,8 @@ import { IndustryMajor } from '../vendor-finance/models/industry-major';
   providedIn: 'root'
 })
 export class ImService {
-  private baseUrl = "http://localhost:8081/book/500";
+  // private baseUrl = "http://localhost:8081/book/500";
+  private baseUrl = "http://scfu-api-service:8080/book/500";
 
   constructor(private http: HttpClient) { }
 
